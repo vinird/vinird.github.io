@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Investigación sobre realidad virtual • A-Frame Framework</title>
+    <script src="js/aframe.min.js"></script>
+    <script src="js/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!--Assets del proyecto-->
+      <a-assets>
+        <img id="grass01" src="imgs/textures/grass01.jpg" />
+        <img id="tree_wood01" src="imgs/textures/tree_wood0101.jpg" />
+        <img id="tree_wood02" src="imgs/textures/tree_wood0201.jpg" />
+        <img id="sheet01" src="imgs/textures/sheet01.png" />
+        <img id="sheet02" src="imgs/textures/sheet02.png" />
+        <img id="wood01" src="imgs/textures/wood01.jpg" />
+        <img id="door01" src="imgs/textures/door.png" />
+      </a-assets>
+      <!--Creación de la cámara y cursor-->
+      <a-entity id="player" camera universal-controls kinematic-body position="0 1.5 0">
+     </a-entity>
+      <!--Objectos de entorno-->
+      <a-entity id="floor" geometry="primitive: plane; width: 100; height: 100;" static-body position="0 0 0" rotation="-90 0 0" material="src: #grass01; shader: flat; metalness:0; roughness:0; repeat: 101 101">
+      </a-entity>
+      <!--Casa/Adelante-->
+      <a-entity geometry="primitive: plane; width: 3; height: 3" static-body position="1 1.5 -3" material="src: #wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 3 3">
+      </a-entity>
+      <a-image src="#door01" static-body width="2" height="3" position="3.5 1.5 -3"></a-image>
+      <a-entity geometry="primitive: plane; width: 3; height: 3" static-body position="6 1.5 -3" material="src: #wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 3 3">
+      </a-entity>
+      <!--Casa/Lados-->
+      <a-entity geometry="primitive: plane; width: 3; height: 3" static-body position="-0.5 1.5 -4.5" rotation="0 90 0" material="src: #wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 3 3">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 3; height: 3" static-body position="7.5 1.5 -4.5" rotation="0 90 0" material="src: #wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 3 3">
+      </a-entity>
+      <!--Casa/Atrás-->
+      <a-entity geometry="primitive: plane; width: 8; height: 3" static-body position="3.5 1.5 -6" material="src: #wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 8 3">
+      </a-entity>
+      <!--Casa-Techo-->
+      <a-entity geometry="primitive: plane; width: 8;" static-body position="3.5 3.5 -3" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 8 1">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 3; height: 1" static-body position="-0.5 3.5 -4.5" rotation="0 90 0" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 3 1">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 1; height: 1" static-body position="-0.5 4.5 -4.5" rotation="0 90 0" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 8;" static-body position="3.5 4.5 -4" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 8 1">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 8;" static-body position="3.5 3.5 -6" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 8 1">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 3; height: 1" static-body position="7.5 3.5 -4.5" rotation="0 90 0" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 3 1">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 1; height: 1" static-body position="7.5 4.5 -4.5" rotation="0 90 0" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double">
+      </a-entity>
+      <a-entity geometry="primitive: plane; width: 8;" static-body position="3.5 4.5 -5" material="src: #tree_wood01; shader: flat; metalness: 0; roughness: 0; side:double; repeat: 8 1">
+      </a-entity>
+      <!--Árbol01-->
+      <a-entity geometry="primitive: box;" static-body position="-6 0.5 -2.5" material="metalness: 0; roughness: 0; src: #tree_wood02">
+      </a-entity>
+      <a-entity geometry="primitive: box;" static-body position="-6 1.5 -2.5" material="metalness: 0; roughness: 0; src: #tree_wood02">
+      </a-entity>
+      <a-entity geometry="primitive: box;" static-body position="-6 2.5 -2.5" material="metalness: 0; roughness: 0; src: #tree_wood02">
+      </a-entity>
+      <a-image static-body src="#sheet02" width="3" height="1" position="-6 2.5 -1" material="metalness: 0; roughness: 0; side:double;">
+      </a-image>
+      <a-image static-body src="#sheet02" width="3" height="1" position="-7.5 2.5 -2.5" rotation="0 90 0" material="metalness: 0; roughness: 0; side:double;">
+      </a-image>
+      <a-image static-body src="#sheet02" width="3" height="1" position="-4.5 2.5 -2.5" rotation="0 90 0" material="metalness: 0; roughness: 0; side:double;">
+      </a-image>
+      <a-image static-body src="#sheet02" width="1" height="1" position="-6 3.5 -2" material="metalness: 0; roughness: 0; side:double;">
+      </a-image>
+      <a-image static-body src="#sheet02" position="-5.5 3.5 -2.5" rotation="0 90 0" material="metalness: 0; roughness: 0; side:double;">
+      </a-image>
+      <!--Objectos con interacción-->
+      <a-sky color="#AFEEEE"></a-sky>
+    </a-scene>
+  </body>
+</html>
